@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/url"
+	"strconv"
 
 	"github.com/ChimeraCoder/anaconda"
 )
@@ -35,7 +36,8 @@ func main() {
 	v.Set("count","10000")
 	// v.Set("exclude","retweets")
 	// 検索
-	searchResult, _ := api.GetSearch(`"プログラミング初学者"`, v)
+	searchResult, _ := api.GetSearch(`"アオキ大好き！最高！"`, v)
+	fmt.Println(strconv.Itoa(len(searchResult.Statuses))+"件ヒットしました！！")
 	for _, tweet := range searchResult.Statuses {
 		fmt.Printf("%d\n", tweet.User.Id)
 		api.FollowUserId(tweet.User.Id,v)
