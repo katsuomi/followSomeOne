@@ -1,3 +1,3 @@
 # followSomeOne
 
-## in writting
+You can easily follow someone on twitter!
